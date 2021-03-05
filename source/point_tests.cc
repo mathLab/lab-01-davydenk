@@ -26,10 +26,24 @@ TEST(Pythagoras, ScalarProduct)
   ASSERT_EQ(x * x, 25);
 }
 
-
-int
-main(int argc, char *argv[])
+TEST(Pythagoras3, Norm)
 {
-  testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
+  Point<3> x(20, 4, 5);
+  ASSERT_EQ(x.norm(), 21);
 }
+
+
+TEST(Pythagoras3, Distance)
+{
+  Point<3> x(21, 5, 6);
+  Point<3> y(1, 1, 1);
+  ASSERT_EQ(x.distance(y), 21);
+}
+
+
+TEST(Pythagoras3, ScalarProduct)
+{
+  Point<3> x(20, 4, 5);
+  ASSERT_EQ(x * x, 441);
+}
+
